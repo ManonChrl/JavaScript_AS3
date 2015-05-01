@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  div(class="jumbotron vertical-center")
+   div(class="container text-center")
+    h1= title
+    p Welcome to the #{title}
+    p #{description}
+    p(id="alert") #{alert}
+    form(action="/homepage",method="post",id="userform")
+     input(name="username",placeholder="Username")
+     br
+     br
+     input(type="submit",value="Enter",class="btn btn-sm btn-primary")
+  
+   
+

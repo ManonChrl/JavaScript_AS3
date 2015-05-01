@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  nav(class="navbar navbar-inverse")
+   div(class="container")
+    div(class="navbar-header")
+     button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar")
+      span(class="sr-only") Toggle navigation
+      span(class="icon-bar")
+     a(class="navbar-brand",href="#") Chat Room
+    div(class="navbar-collapse collapse",id="navbar")
+     ul(class="nav navbar-nav")
+      li
+       a(href="/users",target="_blank") Users
+     ul(class="nav navbar-nav navbar-right")
+      li
+       form(action="/")
+        button(class="btn btn-default navbar-btn",id="logOut") Log Out
+  div(class="jumbotron vertical-center")
+   div(class="container text-center")
+    p Welcome #{user} ! 
+  fieldset
+   legend Chat Room: 
+   ul(id="messages")
+   form(action="",id="form")
+    input(type="hidden",id="username",value="#{user}")
+    input(id="m",autocomplete="off")
+    img(src="/images/thumbsUp.png",id="thumbsUp")
+    button(id="send") Send
+   script(src='/javascripts/chat.js')
+   script(src='/socket.io/socket.io.js')
+  
+   
+
